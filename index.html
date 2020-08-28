@@ -40,7 +40,7 @@
         <div id="event" class="signup">
             <h2>Naas Charity 10k Marathon</h2>
             <p>Sunday 10th October 2020</p>
-            <button>Sign me up!</button>
+            <button id="register">Sign me up!</button>
         </div>
     </div>
 
@@ -100,7 +100,25 @@
                 <li><a href="#"><i class="fas fa-rss"></i></a></li>
             </ul>
          </div>
-         
      </footer>
+     <script>
+         function signMeUp(){
+            let name = prompt("What is your name?");
+            let age = prompt ("How old are you?");
+
+            let raceNumber = Math.floor(Math.random() * 1000);
+            if (age >= 18 && name.length > 0){
+                raceNumber += 1000;
+                alert(`Thank you ${name} for joining us 🙌. You will race at 9:30am. Your race number is: ${raceNumber}.`);
+            } else if (age < 18 && age >= 10 && name.length > 0) {
+                alert(`Thank you ${name} for joining us 🙌. You will race at 11:00am. Your race number is: ${raceNumber}. `)
+            } else {
+                alert(`Thank you for joining us 🙌. Please register at registration desk on your arrival.`);
+            }
+         }
+    
+        let signUpbtn = document.querySelector("#register");
+        signUpbtn.addEventListener("click", signMeUp); 
+     </script>
 </body>
 </html>
